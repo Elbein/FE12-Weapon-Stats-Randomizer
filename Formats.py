@@ -1,0 +1,70 @@
+from Buffer import Buffer
+
+
+class Item:
+    def __init__(self, buffer, id):
+        self.id_pointer = buffer.read_u32()
+        self.name = buffer.read_u32()
+        self.description = buffer.read_u32()
+        self.icon = buffer.read_u8()
+        self.unknown1 = buffer.read_u8()
+        self.price = buffer.read_u16()
+        self.item_type = buffer.read_u8()
+        self.item_use_effect = buffer.read_u8()
+        self.weapon_level = buffer.read_u8()
+        self.wexp = buffer.read_u8()
+        self.uses = buffer.read_u8()
+        self.might = buffer.read_u8()
+        self.hit = buffer.read_u8()
+        self.crit = buffer.read_u8()
+        self.weight = buffer.read_u8()
+        self.min_range = buffer.read_u8()
+        self.max_range = buffer.read_u8()
+        self.stat_boosts = buffer.read_bytes(9)
+        self.ability_1 = buffer.read_u8()
+        self.ability_2 = buffer.read_u8()
+        self.ability_3 = buffer.read_u8()
+        self.ability_4 = buffer.read_u8()
+        self.ability_5 = buffer.read_u8()
+        self.ability_6 = buffer.read_u8()
+        self.ability_7 = buffer.read_u8()
+        self.ability_8 = buffer.read_u8()
+        self.effectiveness = buffer.read_u8()
+        self.remainder = buffer.read_bytes(15)
+
+        self.id = id
+
+    def write(self):
+        size = 60
+        buffer = Buffer(bytearray(size), write=True)
+
+        buffer.write_u32(self.id_pointer)
+        buffer.write_u32(self.name)
+        buffer.write_u32(self.description)
+        buffer.write_u8(self.icon)
+        buffer.write_u8(self.unknown1)
+        buffer.write_u16(self.price)
+        buffer.write_u8(self.item_type)
+        buffer.write_u8(self.item_use_effect)
+        buffer.write_u8(self.weapon_level)
+        buffer.write_u8(self.wexp)
+        buffer.write_u8(self.uses)
+        buffer.write_u8(self.might)
+        buffer.write_u8(self.hit)
+        buffer.write_u8(self.crit)
+        buffer.write_u8(self.weight)
+        buffer.write_u8(self.min_range)
+        buffer.write_u8(self.max_range)
+        buffer.write_bytes(self.stat_boosts)
+        buffer.write_u8(self.ability_1)
+        buffer.write_u8(self.ability_2)
+        buffer.write_u8(self.ability_3)
+        buffer.write_u8(self.ability_4)
+        buffer.write_u8(self.ability_5)
+        buffer.write_u8(self.ability_6)
+        buffer.write_u8(self.ability_7)
+        buffer.write_u8(self.ability_8)
+        buffer.write_u8(self.effectiveness)
+        buffer.write_bytes(self.remainder)
+
+        return buffer.data

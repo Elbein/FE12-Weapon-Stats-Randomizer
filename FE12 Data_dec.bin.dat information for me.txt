@@ -1,0 +1,90 @@
+Characters
+
+0x20: Marth
+
+0x2C: Marth's base HP (8)
+
+
+0x7C: Kris
+
+
+
+Items:
+
+0xA308: Iron Sword
+
+0xA316-0XA317: Price per use (Iron Sword?): 10g per use (hex is 0A 00)
+0xA31A: Weapon Level = 1 (E rank?  1 weapon exp?)
+0xA31B: How much Weapon EXP a use grants: this one gives 2 wEXP
+0xA31C: Uses: Hex28 = 40: 40 uses means this is an iron weapon
+0xA31D: Might: 05 means Iron Sword has 5 might
+0xA31E: Hit: Hex64 = 100: Iron Sword has 0 crit 
+0xA31F: Crit: Hex0 = 0
+
+item type 00: sword? weapon?
+item use effect 00: none? (item use effect probably means stuff like Vulnerary/Hauteclere's use for +10 health, Pure Water res boost, etc)
+effectiveness: 00: none
+
+0xA344: new weapon
+
+0XA352-0xA353: Hex19=25g per use
+0xA354: item type = 0
+0xA356: Hex1F = 31: 31 weapon exp to use (D rank)
+0xA358: Hex23 = 35: 35 uses
+
+Weapon Rank
+
+E rank: 01
+D rank: Dec31 (hex 1F)
+C rank: Dec76 (hex 4C)
+B rank: Dec136 (hex 88)
+A rank: Dec196 (hex C4)
+
+
+Weapon Ability:
+Devil Effect: Hex40/Dec64 (ability 1)
+Levin: Hex04 (ability 1)
+Rapier has 08 in its ability slot 7.  Maybe this is how it tracks it being locked to Lord?
+Brave: 02 (ability 1)
+Lady Sword/Female Locked(?): 08 (ability 8)
+Wing Spear has 20 in its ability slot 7.  Likely how it registers lock to Caeda
+
+///Hex40 is on Ability 1 for the Devil Sword.  Decimal value is 64.  This 
+
+//Falchion has 01 for ability 1, 14 for ability 4, 18 for ability 5, 04 for ability 7, 40 for ability 8.  \
+//Hauteclere also has 01 for ability 1 and 40 for ability 8.  The rest are blank. One of these two is probably the treasure marker so you can't discard/sell it
+//Parthia has 01 for ability 1, 10 for ability 5, and 40 for ability 8
+//Nosferatu has 01 in ability slot 6 and 48 in ability slot 8.  One is female only and the other is hp drain
+//Swarm has 08 in ability slot 1 and 60 in ability slot 8.  
+//Glower has 08 in ability slot 6 and 20 in ability slot 8.  One is resistance negation, but I don't know what the other would be
+//Aura has 01 in ability slot 7 and 48 in ability slot 8.  Slot 8 might correspond to female only, while slot 7 is Linde being able to use at E rank
+//Excalibur has 02 in ability slot 7 and 44 in ability slot 8.  One of them is male only, the other is Merric can use at E rank
+//Imuhullu has 04 in ability slot 2, 18 in ability slot 4, and 60 in ability slot 8.  One of them is the invulnerability
+//Starlight has 08 in ability slot 2, 04 in ability slot 4, and 40 in ability slot 8.  One (my guess is slot 8) is the treasure flag, one is the Imhullu negation, and the other I don't know
+//Arrowspate has 08 in ability slot 1 and 60 in ability slot 8.  Stonehoist, Hoistflamme and Pachyderm are the same
+//Thunderbolt has 0C in ability slot 1 and 60 in ability slot 8.  Is 60 in ability slot 8 what prevents them from doubling?
+//Firestone, Icestone, Wyvernstone has 40 in ability slot 8
+//Magestone has 04 in ability slot 1 (levin effect), 40 in ability slot 2, and 40 in ability slot 8
+//Divinestone has 41 in ability slot 8
+
+Weapon Effectiveness: 
+
+anti-dragon Effect: 01
+anti-armor Effect: 04
+Swordslayer Effect: Hex80
+anti-armor+cavalry Effect: Hex14
+anti-dragon+medeus Effect: 03
+anti-cavalry Effect: Hex10
+anti-flier Effect: Hex20
+anti-ballista Effect: Hex08
+??: Hex40 (seen on Divinestone). Presumed anti-dragon but why the difference from wyrmslayer?
+
+
+Weapon Use Effect:
+Restore HP: 01 (Gradivus uses Hex63, for a 99 HP heal.  
+Increase stat(?): 04 (seen on Parthia for its pure water effect)
+??: Hex11 (Seen on Firestone(?))
+??: Hex15 (Seen on Icestone(?))
+??: Hex16 (Seen on Wyvernstone(?))
+??: Hex13 (Seen on Magestone(?))
+??: Hex14 (Seen on Divinestone(?))
